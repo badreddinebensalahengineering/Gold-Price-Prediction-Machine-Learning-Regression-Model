@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Prédiction du prix de l'or</title>
+</head>
+<body>
+    <h1>Prédiction du prix de l'or</h1>
+
+    {% if error %}
+        <div style="color:red; font-weight:bold;">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    {% if info %}
+        <p>{{ info }}</p>
+    {% endif %}
+
+    {% if result %}
+        <div style="color:green; font-weight:bold;">{{ result }}</div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Prédire</button>
+    </form>
+
+    <p>Chemin du modèle utilisé: {{ model_path }}</p>
+    <p>{% if model_loaded %}Modèle chargé{% else %}Modèle non chargé{% endif %}</p>
+</body>
+</html>

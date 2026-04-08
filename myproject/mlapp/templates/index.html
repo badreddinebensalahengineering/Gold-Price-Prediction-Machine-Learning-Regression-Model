@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ML Prediction</title>
+</head>
+<body>
+
+<h1>Prédiction ML</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="USO" placeholder="Entrée 1">
+    <input type="text" name="SLV" placeholder="Entrée 2">
+    <input type="text" name="GLD" placeholder="Entrée 3">
+    <input type="text" name="EUR/USD" placeholder="Entrée 4">
+    <button type="submit">Prédire</button>
+</form>
+
+<h2>{{ prediction }}</h2>
+
+</body>
+</html>
